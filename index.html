@@ -12,14 +12,16 @@
         <div class="container">
             <div class="ingredientForm" ng-controller="ingredientController as iC">
                 <h1>Feed me list</h1>
-                <label>Ingredient: </label>
-                <input type="text" ng-model="iC.ingredientName">
-                <button ng-click="iC.addIngredientToList()">Save</button>
+                <div class="form-group">
+                    <label>Ingredient: </label>
+                    <input type="text" ng-model="iC.ingredientName" class="form-control">
+                </div>
+                <button ng-click="iC.addIngredientToList()" type="button" class="btn btn-primary">Save</button>
                 <div class="ingredientList">
-                    <h2 ng-show="ingredient < 0">Get this stuff to be stuffed</h2>
-                    <ul>
-                        <li ng-repeat="ingredient in iC.getIngredientList()">
-                            {{ ingredient }}
+                    <h2 ng-show="iC.getIngredientList()">Get this stuff to be stuffed</h2>
+                    <ul class="list-group">
+                        <li ng-repeat="ingredient in iC.getIngredientList()" class="list-group-item">
+                            {{ ingredient}}
                         </li>
                     </ul>
                 </div>
