@@ -10,11 +10,19 @@
     </head>
     <body ng-app="groceriesApp">
         <div class="container">
-            <div class="ingredientForm" ng-controller="ingredientController as iFC">
+            <div class="ingredientForm" ng-controller="ingredientController as iC">
                 <h1>Feed me list</h1>
                 <label>Ingredient: </label>
-                <input type="text" ng-model="iFC.ingredientName">
-                <button ng-click="iFC.addIngredientToList()">Save</button>
+                <input type="text" ng-model="iC.ingredientName">
+                <button ng-click="iC.addIngredientToList()">Save</button>
+                <div class="ingredientList">
+                    <h2 ng-show="ingredient < 0">Get this stuff to be stuffed</h2>
+                    <ul>
+                        <li ng-repeat="ingredient in iC.getIngredientList()">
+                            {{ ingredient }}
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </body>
