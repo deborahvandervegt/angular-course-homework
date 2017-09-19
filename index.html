@@ -5,8 +5,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
         <script src="node_modules/angular/angular.min.js"></script>
         <script src="main.js"></script>
+        <script src="ingredients.service.js"></script>
     </head>
     <body ng-app="groceriesApp">
         <div class="container">
@@ -20,8 +22,8 @@
                 <div class="ingredientList">
                     <h2 ng-show="iC.getIngredientList()">Get this stuff to be stuffed</h2>
                     <ul class="list-group">
-                        <li ng-repeat="ingredient in iC.getIngredientList()" class="list-group-item">
-                            {{ ingredient}}
+                        <li ng-repeat="ingredient in iC.ingredients" class="list-group-item">
+                            {{ ingredient.name }}
                         </li>
                     </ul>
                 </div>

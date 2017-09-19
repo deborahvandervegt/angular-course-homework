@@ -5,22 +5,23 @@
             .module('groceriesApp', [])
             .controller('ingredientController', ingredientController);
 
-    function ingredientController() {
-        var vm = this;
-        var ingredients = [];
+    ingredientController.$inject = ['ingredientsService'];
 
-        vm.name = '';
+    function ingredientController(ingredientsService) {
+        var vm = this;
+
+        vm.ingredients = ingredientsService.get();
         vm.ingredientName = '';
 
         vm.addIngredientToList = function () {
-            vm.name = vm.ingredientName;
-
-            ingredients[ingredients.length++] = vm.name;
+            vm.ingredients.push(
+                    { name: vm.ingredientName }
+            );
         }
 
         vm.getIngredientList = function () {
-            if (ingredients.length > 0) {
-                return ingredients;
+            if (vm.ingredients.length > 0) {
+                this.ingredients = ingredientsService.get();
             }
 
             return '';
