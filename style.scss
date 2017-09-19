@@ -1,9 +1,62 @@
 body {
-    background-image: url('rainbow.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+    input,
+    select,
+    li {
+        color: #00262c;
+    }
 
-.ingredientList {
-    margin-top: 20px;
+    h1 {
+        margin-top: 0;
+        padding-top: 20px;
+    }
+
+    button.btn-primary {
+        background-color: #00695C;
+        border-color: #00695C;
+
+        &:hover {
+            background-color: #004D40;
+        }
+    }
+
+    .ingredientForm,
+    .ingredientList {
+        width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        .field {
+            width: 45%;
+            display: inline-block;
+            
+            &:last-child {
+                margin-left: 5%;
+            }
+            
+            input {
+                padding-top: 2px;
+            }
+            
+            select {
+                color: #909090;
+            }
+        }
+    }
+
+    .wrapper {
+        background-color: #009688;
+        color: #FFFFFF;
+    }
+
+    .ingredientList {
+        margin-top: 20px;
+        
+        ul li input span {
+            margin-left: 10px;
+        }
+    }
+
+    .ingredientForm {
+        padding-bottom: 20px;
+    }
 }

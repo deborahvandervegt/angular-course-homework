@@ -1,7 +1,45 @@
-body {
-  background-image: url("rainbow.svg");
-  background-repeat: no-repeat;
-  background-size: cover; }
+body input,
+body select,
+body li {
+  color: #00262c; }
 
-.ingredientList {
+body h1 {
+  margin-top: 0;
+  padding-top: 20px; }
+
+body button.btn-primary {
+  background-color: #00695C;
+  border-color: #00695C; }
+  body button.btn-primary:hover {
+    background-color: #004D40; }
+
+body .ingredientForm,
+body .ingredientList {
+  width: 750px;
+  margin-left: auto;
+  margin-right: auto; }
+  body .ingredientForm .field,
+  body .ingredientList .field {
+    width: 45%;
+    display: inline-block; }
+    body .ingredientForm .field:last-child,
+    body .ingredientList .field:last-child {
+      margin-left: 5%; }
+    body .ingredientForm .field input,
+    body .ingredientList .field input {
+      padding-top: 2px; }
+    body .ingredientForm .field select,
+    body .ingredientList .field select {
+      color: #909090; }
+
+body .wrapper {
+  background-color: #009688;
+  color: #FFFFFF; }
+
+body .ingredientList {
   margin-top: 20px; }
+  body .ingredientList ul li input span {
+    margin-left: 10px; }
+
+body .ingredientForm {
+  padding-bottom: 20px; }
