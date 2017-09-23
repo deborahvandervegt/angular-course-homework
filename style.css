@@ -24,6 +24,9 @@ body .ingredientList {
     display: inline-block; }
     body .ingredientForm .field:last-child,
     body .ingredientList .field:last-child {
+      margin-top: 1%; }
+    body .ingredientForm .field:nth-child(2n),
+    body .ingredientList .field:nth-child(2n) {
       margin-left: 5%; }
     body .ingredientForm .field input,
     body .ingredientList .field input {
@@ -38,8 +41,11 @@ body .wrapper {
 
 body .ingredientList {
   margin-top: 20px; }
-  body .ingredientList ul li input span {
+  body .ingredientList ul li span {
     margin-left: 10px; }
 
 body .ingredientForm {
   padding-bottom: 20px; }
+
+body h4 {
+  color: #0288D1; }

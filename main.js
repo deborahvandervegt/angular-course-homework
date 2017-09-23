@@ -13,10 +13,11 @@
         vm.ingredients = ingredientsService.get();
         vm.ingredientName = '';
         vm.ingredientCategory = '';
+        vm.ingredientAmount = '';
 
         vm.addIngredientToList = function () {
             vm.ingredients.push(
-                    { name: vm.ingredientName, category: vm.ingredientCategory }
+                    { name: vm.ingredientName, category: vm.ingredientCategory, amount: vm.ingredientAmount }
             );
         }
 

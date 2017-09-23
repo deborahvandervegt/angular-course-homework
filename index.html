@@ -9,7 +9,6 @@
         <script src="node_modules/angular/angular.min.js"></script>
         <script src="main.js"></script>
         <script src="ingredients.service.js"></script>
-        <script src="translate.filter.js"></script>
     </head>
     <body ng-app="groceriesApp">
         <div ng-controller="ingredientController as iC">
@@ -22,6 +21,10 @@
                             <input type="text" ng-model="iC.ingredientName" class="form-control" placeholder="Ingredient name...">
                         </div>
                         <div class="field">
+                            <label>Amount: </label>
+                            <input type="number" ng-model="iC.ingredientAmount" class="form-control" placeholder="Ingredient amount...">
+                        </div>
+                        <div class="field">
                             <label>Category: </label>
                             <select ng-model="iC.ingredientCategory" class="form-control">
                                 <option value="" disabled selected hidden>Ingredient category...</option>
@@ -30,6 +33,7 @@
                                 <option value="meat">Vlees</option>
                                 <option value="fish">Vis</option>
                                 <option value="grains">Granen</option>
+                                <option value="dairy">Zuivel</option>
                                 <option value="other">Overige</option>
                             </select>
                         </div>
@@ -40,8 +44,60 @@
             <div class="ingredientList">
                 <h3 ng-show="iC.ingredients.length">Get this stuff to be stuffed</h3>
                 <ul class="list-group">
-                    <li ng-repeat="ingredient in iC.ingredients| orderBy:'-category'" class="list-group-item">
-                        <input type="checkbox"><span>{{ ingredient.name}} - {{ ingredient.category | translate }}</span></input>
+                    <!--Vegetables-->
+                    <li ng-repeat="ingredient in iC.ingredients" ng-if="ingredient.category == 'vegetables'" class="list-group-item">
+                        <h4 ng-if="$index == 2">Groente</h4>
+                        <input type="checkbox">
+                            <span>{{ ingredient.amount}} {{ ingredient.name}}</span>
+                        </input>
+                    </li>
+                    
+                    <!--Fruit-->
+                    <li ng-repeat="ingredient in iC.ingredients" ng-if="ingredient.category == 'fruit'" class="list-group-item">
+                        <h4 ng-if="$index == 1">Fruit</h4>
+                        <input type="checkbox">
+                            <span>{{ ingredient.amount}} {{ ingredient.name}}</span>
+                        </input>
+                    </li>
+                    
+                    <!--Meat-->
+                    <li ng-repeat="ingredient in iC.ingredients" ng-if="ingredient.category == 'meat'" class="list-group-item">
+                        <h4 ng-if="$index == 4">Vlees</h4>
+                        <input type="checkbox">
+                            <span>{{ ingredient.amount}} {{ ingredient.name}}</span>
+                        </input>
+                    </li>
+                    
+                    <!--Fish-->
+                    <li ng-repeat="ingredient in iC.ingredients" ng-if="ingredient.category == 'fish'" class="list-group-item">
+                        <h4 ng-if="$index == 12">Vis</h4>
+                        <input type="checkbox">
+                            <span>{{ ingredient.amount}} {{ ingredient.name}}</span>
+                        </input>
+                    </li>
+                    
+                    <!--Grains-->
+                    <li ng-repeat="ingredient in iC.ingredients" ng-if="ingredient.category == 'grains'" class="list-group-item">
+                        <h4 ng-if="$index == 5">Granen</h4>
+                        <input type="checkbox">
+                            <span>{{ ingredient.amount}} {{ ingredient.name}}</span>
+                        </input>
+                    </li>
+                    
+                    <!--Dairy-->
+                    <li ng-repeat="ingredient in iC.ingredients" ng-if="ingredient.category == 'dairy'" class="list-group-item">
+                        <h4 ng-if="$index == 8">Zuivel</h4>
+                        <input type="checkbox">
+                            <span>{{ ingredient.amount}} {{ ingredient.name}}</span>
+                        </input>
+                    </li>
+                    
+                    <!--Other-->
+                    <li ng-repeat="ingredient in iC.ingredients" ng-if="ingredient.category == 'other'" class="list-group-item">
+                        <h4 ng-if="$index == 0">Overige</h4>
+                        <input type="checkbox">
+                            <span>{{ ingredient.amount}} {{ ingredient.name}}</span>
+                        </input>
                     </li>
                 </ul>
             </div>

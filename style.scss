@@ -30,6 +30,10 @@ body {
             display: inline-block;
             
             &:last-child {
+                margin-top: 1%;
+            }
+            
+            &:nth-child(2n) {
                 margin-left: 5%;
             }
             
@@ -51,12 +55,16 @@ body {
     .ingredientList {
         margin-top: 20px;
         
-        ul li input span {
+        ul li span {
             margin-left: 10px;
         }
     }
 
     .ingredientForm {
         padding-bottom: 20px;
+    }
+    
+    h4 {
+        color: #0288D1;
     }
 }
