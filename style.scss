@@ -50,6 +50,10 @@ body {
     .wrapper {
         background-color: #009688;
         color: #FFFFFF;
+        
+        @media print {
+            display: none;
+        }
     }
 
     .ingredientList {

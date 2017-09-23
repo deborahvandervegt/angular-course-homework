@@ -38,6 +38,9 @@ body .ingredientList {
 body .wrapper {
   background-color: #009688;
   color: #FFFFFF; }
+  @media print {
+    body .wrapper {
+      display: none; } }
 
 body .ingredientList {
   margin-top: 20px; }
