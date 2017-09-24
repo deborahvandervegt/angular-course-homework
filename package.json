@@ -1,7 +1,7 @@
 {
-  "name": "angular-course-homework",
+  "name": "epiceri",
   "version": "0.0.0",
-  "description": "Repository with homework for the AngularJS Training",
+  "description": "Repository to create a simple groceries list",
   "main": ".",
   "scripts": {
     "start": "browser-sync start --server --files \"*.html, *.js, css/*.css\"",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:deborahvandervegt/angular-course-homework.git"
+    "url": "git@github.com:deborahvandervegt/epiceri.git"
   },
   "author": "Deborah van der Vegt",
   "license": "UNLICENSED",
